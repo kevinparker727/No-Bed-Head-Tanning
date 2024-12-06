@@ -1,25 +1,53 @@
+"use client";
+
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
+
 import Header from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import React from "react";
 
 const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("service_tomyo4t", "template_8qag6pl", form.current, {
+        publicKey: "LdZ4w0Zji_2cYZMie",
+      })
+      .then(
+        () => {
+          console.log("Success!");
+          e.target.reset();
+        },
+        (error) => {
+          console.log("Failed...", error.text, error);
+        }
+      );
+  };
+
   return (
     <section>
-      <div className="bg-contact-hero bg-cover bg-no-repeat bg-center w-full h-[85vh]">
-        <Header />
-        <div className="w-full flex justify-center items-center h-3/5">
-          <h2 className="h2 w-fit mx-[10%] font-primary text-white font-thin text-center p-6 xl:p-10 bg-stone-500/50 rounded-2xl drop-shadow-xl backdrop-blur-md opacity-85">
-            Send Us a Message!
-          </h2>
+      <div className="h-[100vh]">
+        <div className="bg-contact-hero bg-cover bg-no-repeat bg-center w-full h-[85vh]">
+          <Header />
+          <div className="w-full flex justify-center items-center h-3/5">
+            <h2 className="h2 w-fit mx-[10%] font-primary text-white font-thin text-center p-6 xl:p-10 bg-stone-500/50 rounded-2xl drop-shadow-xl backdrop-blur-md opacity-85">
+              Send Us a Message!
+            </h2>
+          </div>
+        </div>
+        <div className="flex flex-col justify-center h-[13vh] ml-[10%]">
+          <h2 className="h2 max-sm:text-3xl">We love hearing from you . . .</h2>
         </div>
       </div>
-      <form className="container mx-auto">
-        <div className="flex flex-col my-8 gap-8">
-          <h2 className="h2">We love hearing from you</h2>
-          <p className="p mx-5 text-center md:text-left">
-            Ask a question, request an appointment, send a review, or give us a
+      <form ref={form} onSubmit={sendEmail} className="container mx-auto">
+        <div className="mx-[5%] md:mx-[10%] mb-14 text-center ">
+          <p className="p">
+            Ask a question, request an appointment, send a review, or leave a
             suggestion. I read every message I receive and love hearing from
             you. Anything you send here goes directly to the owner and will be
             kept private.
@@ -34,7 +62,7 @@ const Contact = () => {
             <div className="mt-2">
               <Input
                 id="first-name"
-                name="first-name"
+                name="first_name"
                 type="text"
                 autoComplete="given-name"
               />
@@ -48,7 +76,7 @@ const Contact = () => {
             <div className="mt-2">
               <Input
                 id="last-name"
-                name="last-name"
+                name="last_name"
                 type="text"
                 autoComplete="family-name"
               />
@@ -76,7 +104,7 @@ const Contact = () => {
             <div className="mt-2">
               <Input
                 id="street-address"
-                name="street-address"
+                name="address"
                 type="text"
                 autoComplete="street-address"
               />
@@ -104,7 +132,7 @@ const Contact = () => {
             <div className="mt-2">
               <Input
                 id="region"
-                name="region"
+                name="state"
                 type="text"
                 autoComplete="address-level1"
               />
@@ -118,7 +146,7 @@ const Contact = () => {
             <div className="mt-2">
               <Input
                 id="postal-code"
-                name="postal-code"
+                name="zip"
                 type="text"
                 autoComplete="postal-code"
               />
@@ -129,7 +157,7 @@ const Contact = () => {
               About
             </label>
             <div className="mt-2">
-              <Textarea id="about" name="about" rows={6} defaultValue={""} />
+              <Textarea id="about" name="message" rows={6} defaultValue={""} />
             </div>
             <p className="mt-3 text-sm/6 text-white/80">
               Tell me a bit about yourself and what you're looking for.

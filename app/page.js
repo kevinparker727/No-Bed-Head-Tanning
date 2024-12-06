@@ -2,6 +2,7 @@ import React from "react";
 import ContactButton from "@/components/ContactButton";
 import Stats from "@/components/Stats";
 import Header from "@/components/Header";
+import Image from "next/image";
 
 const Home = () => {
   return (
@@ -15,17 +16,21 @@ const Home = () => {
             </h2>
           </div>
         </div>
-        <div className="mb-7 py-6 lg:py-10 text-center">
+        <div className="h-[32vh] flex flex-col justify-center gap-6 lg:gap-12 text-center">
           <Stats />
-          <h2 className="h2 font-secondary mt-14 sm:mt-16 lg:mt-20">
-            Welcome to No Bed Head Tanning
-          </h2>
-          <div className="border-[1px] border-accent my-4 md:my-8 mx-5 md:mx-32 lg:mx-64"></div>
+          <div className="flex flex-col gap-5 md:gap-7">
+            <h2 className="h2 font-secondary">
+              Welcome to No Bed Head Tanning
+            </h2>
+            <div className="w-full flex justify-center">
+              <div className="border-[1px] border-accent w-[90%] md:w-[65%]"></div>
+            </div>
+          </div>
         </div>
       </div>
-      <div className="h-full mx-auto px-[30px]">
-        <div className="flex flex-col text-center">
-          <p className="mx-2 xl:mx-20 text-lg font-light tracking-wider leading-loose">
+      <div className="flex items-center h-full w-full px-10 md:px-0 mt-10 mb-12">
+        <div className="text-center md:w-full xl:w-1/2">
+          <p className="text-lg font-light tracking-wider leading-loose px-8 md:px-20 lg:ml-20  xl:ml-40">
             No Bed Head Tanning brings the perfect glow directly to you with our
             convenient mobile service in Cornwall, NY. We believe that looking
             your best shouldn&#39;t come at the expense of your health, which is
@@ -37,9 +42,19 @@ const Home = () => {
           </p>
         </div>
 
-        <div className="flex flex-col items-center pt-8 pb-16">
-          <ContactButton />
+        <div className="w-1/2 flex justify-center max-md:hidden">
+          <Image
+            alt="Spray Tan Image"
+            src={"/assets/home-second-2.jpg"}
+            width={600}
+            height={600}
+            className="w-[300px] h-[450px] lg:w-[350px] lg:h-[500px] xl:w-[450px] xl:h-[600px]"
+          />
         </div>
+        <div className="flex flex-col items-center pt-8 pb-16"></div>
+      </div>
+      <div className="flex justify-center my-20">
+        <ContactButton />
       </div>
     </section>
   );

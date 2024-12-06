@@ -4,12 +4,14 @@ import Header from "@/components/Header";
 const Disclosures = () => {
   return (
     <section>
-      <div className="bg-disclosures-hero bg-cover bg-no-repeat bg-top xl:bg-center w-full h-[95vh] mb-10">
-        <Header />
-        <div className="w-full flex justify-center items-center h-4/5">
-          <h2 className="h2 w-fit mx-[10%] font-primary text-white font-thin text-center p-8 bg-stone-500/50 rounded-2xl drop-shadow-xl backdrop-blur-md opacity-90">
-            Our Company Ethics and Policies
-          </h2>
+      <div className="h-[100vh]">
+        <div className="bg-disclosures-hero bg-cover bg-no-repeat bg-top xl:bg-center w-full h-[95vh] mb-10">
+          <Header />
+          <div className="w-full flex justify-center items-center h-4/5">
+            <h2 className="h2 w-fit mx-[10%] font-primary text-white font-thin text-center p-8 bg-stone-500/50 rounded-2xl drop-shadow-xl backdrop-blur-md opacity-90">
+              Our Company Ethics and Policies
+            </h2>
+          </div>
         </div>
       </div>
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 mb-32">

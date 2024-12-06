@@ -36,8 +36,9 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       backgroundImage: {
-        "home-video": "url(/assets/home-hero.mp4)",
         "home-image": "url(/assets/home-image.jpg)",
+        "home-secondary-1": "url(/assets/home-second-1.jpg)",
+        "home-secondary-2": "url(/assets/home-second-2.jpg)",
         "gallery-hero": "url(/assets/gallery-hero.jpg)",
         "about-hero-image": "url(/assets/about-hero.jpg)",
         "pricing-hero-image": "url(/assets/palm-trees.png)",
