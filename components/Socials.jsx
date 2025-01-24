@@ -15,7 +15,7 @@ const socials = [
   },
   {
     icon: <FaEnvelope />,
-    path: "/",
+    path: "mailto:nobedheadspraytanning@gmail.com",
   },
 ];
 

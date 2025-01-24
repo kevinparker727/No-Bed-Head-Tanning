@@ -31,8 +31,8 @@ const contact = [
     path: "/",
   },
   {
-    name: "email@email.com",
-    path: "/",
+    name: "nobedheadspraytanning@gmail.com",
+    path: "mailto:nobedheadspraytanning@gmail.com",
   },
   {
     name: "Ask a Question",
@@ -40,7 +40,7 @@ const contact = [
   },
   {
     name: "Privacy Policy",
-    path: "/contact",
+    path: "/disclosures",
   },
 ];
 
@@ -82,7 +82,7 @@ const Footer = () => {
           </div>
           <div className="flex justify-around my-5 lg:gap-[100px]">
             {/* Column 1  */}
-            <div className="flex flex-col ">
+            <div className="flex flex-col text-center">
               <h3 className="h3 mb-3 text-accent">Company</h3>
               {/* Nav  */}
               {nav.map((link, index) => {
@@ -97,7 +97,7 @@ const Footer = () => {
             </div>
 
             {/* Column 2  */}
-            <div className="flex flex-col">
+            <div className="flex flex-col text-center">
               <h3 className="h3 mb-3 text-accent">Support</h3>
               {/* Nav  */}
               {contact.map((link, index) => {

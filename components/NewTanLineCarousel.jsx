@@ -40,16 +40,16 @@ const NewTanLinesCarousel = () => {
       src: "/assets/tan-lines/tanlines4.jpg",
       height: 250,
     },
-    // {
-    //   id: 5,
-    //   src: "/assets/tan-lines/tanlines5.jpg",
-    //   height: 250,
-    // },
-    // {
-    //   id: 6,
-    //   src: "/assets/tan-lines/tanlines6.jpg",
-    //   height: 250,
-    // },
+    {
+      id: 5,
+      src: "/assets/tan-lines/tanlines5.jpeg",
+      height: 250,
+    },
+    {
+      id: 6,
+      src: "/assets/tan-lines/tanlines6.jpeg",
+      height: 250,
+    },
     {
       id: 7,
       src: "/assets/tan-lines/tanlines7.jpg",
@@ -70,16 +70,16 @@ const NewTanLinesCarousel = () => {
       src: "/assets/tan-lines/tanlines10.jpg",
       height: 250,
     },
-    // {
-    //   id: 11,
-    //   src: "/assets/tan-lines/tanlines11.jpg",
-    //   height: 250,
-    // },
-    // {
-    //   id: 12,
-    //   src: "/assets/tan-lines/tanlines12.jpg",
-    //   height: 250,
-    // },
+    {
+      id: 11,
+      src: "/assets/tan-lines/tanlines11.jpeg",
+      height: 250,
+    },
+    {
+      id: 12,
+      src: "/assets/tan-lines/tanlines12.jpeg",
+      height: 250,
+    },
     {
       id: 13,
       src: "/assets/tan-lines/tanlines13.jpg",
@@ -95,11 +95,11 @@ const NewTanLinesCarousel = () => {
       src: "/assets/tan-lines/tanlines15.jpg",
       height: 250,
     },
-    // {
-    //   id: 16,
-    //   src: "/assets/tan-lines/tanlines16.jpg",
-    //   height: 250,
-    // },
+    {
+      id: 16,
+      src: "/assets/tan-lines/tanlines16.jpeg",
+      height: 250,
+    },
     // {
     //   id: 17,
     //   src: "/assets/tan-lines/tanlines17.jpg",

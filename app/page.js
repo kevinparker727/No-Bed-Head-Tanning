@@ -3,6 +3,7 @@ import ContactButton from "@/components/ContactButton";
 import Stats from "@/components/Stats";
 import Header from "@/components/Header";
 import Image from "next/image";
+// import { motion } from "framer-motion";
 
 const Home = () => {
   return (
@@ -18,7 +19,7 @@ const Home = () => {
         </div>
         <div className="h-[32vh] flex flex-col justify-center gap-6 lg:gap-12 text-center">
           <Stats />
-          <div className="flex flex-col gap-5 md:gap-7">
+          <div className="flex flex-col gap-5 md:gap-7 transition-opacity ease-in duration-700">
             <h2 className="h2 font-secondary">
               Welcome to No Bed Head Tanning
             </h2>
@@ -42,7 +43,11 @@ const Home = () => {
           </p>
         </div>
 
-        <div className="w-1/2 flex justify-center max-md:hidden">
+        <div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          className="w-1/2 flex justify-center max-md:hidden"
+        >
           <Image
             alt="Spray Tan Image"
             src={"/assets/home-second-2.jpg"}
