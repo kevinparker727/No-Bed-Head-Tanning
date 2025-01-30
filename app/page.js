@@ -1,11 +1,15 @@
-import React from "react";
+"use client";
+
+import React, { useRef } from "react";
 import ContactButton from "@/components/ContactButton";
 import Stats from "@/components/Stats";
 import Header from "@/components/Header";
 import Image from "next/image";
-// import { motion } from "framer-motion";
+import { easeIn, easeInOut, easeOut, motion } from "framer-motion";
+import { delay } from "framer-motion";
 
 const Home = () => {
+  const scrollRef = useRef(null);
   return (
     <section className="h-full">
       <div className="h-[100vh]">
@@ -19,18 +23,29 @@ const Home = () => {
         </div>
         <div className="h-[32vh] flex flex-col justify-center gap-6 lg:gap-12 text-center">
           <Stats />
-          <div className="flex flex-col gap-5 md:gap-7 transition-opacity ease-in duration-700">
-            <h2 className="h2 font-secondary">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.5, delay: 3.5, ease: easeInOut }}
+            className="flex flex-col gap-5 md:gap-7"
+          >
+            <div className="h2 font-secondary">
               Welcome to No Bed Head Tanning
-            </h2>
+            </div>
             <div className="w-full flex justify-center">
               <div className="border-[1px] border-accent w-[90%] md:w-[65%]"></div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
-      <div className="flex items-center h-full w-full px-10 md:px-0 mt-10 mb-12">
-        <div className="text-center md:w-full xl:w-1/2">
+      <div className="flex items-center h-full w-full px-10 md:px-0 mt-10 mb-12 ">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          className="text-center md:w-full xl:w-1/2"
+        >
           <p className="text-lg font-light tracking-wider leading-loose px-8 md:px-20 lg:ml-20  xl:ml-40">
             No Bed Head Tanning brings the perfect glow directly to you with our
             convenient mobile service in Cornwall, NY. We believe that looking
@@ -41,11 +56,15 @@ const Home = () => {
             your natural beauty while keeping your skin nourished and radiant.
             Let us help you glow with confidence and ease, wherever you are.
           </p>
-        </div>
+        </motion.div>
 
         <div
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
+          // ref={scrollRef}
+          // initial={{ opacity: 0, translateX: 600 }}
+          // animate={{ opacity: 1, translateX: 0 }}
+          // whileInView={{ opacity: 1}}
+          // viewport={{ once: true, root: scrollRef }}
+          // transition={{ duration: 1, ease: easeIn }}
           className="w-1/2 flex justify-center max-md:hidden"
         >
           <Image

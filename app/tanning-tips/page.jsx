@@ -14,9 +14,9 @@ const tanningTips = () => {
           </div>
         </div>
         <div className="h-[15vh] flex items-center ml-5 md:ml-8 lg:ml-16 xl:ml-24">
-          <h2 className="h2 text-2xl sm:text-3xl">
+          <h1 className="h2 text-2xl sm:text-3xl">
             A brief word about spray tans . . .
-          </h2>
+          </h1>
         </div>
       </div>
       <div className="container mx-auto">

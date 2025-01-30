@@ -1,4 +1,5 @@
 import { Montserrat, Dancing_Script } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${montserrat.variable} ${dancingScript.variable}`}>
         {children}
+        <Analytics />
         <Footer />
       </body>
     </html>

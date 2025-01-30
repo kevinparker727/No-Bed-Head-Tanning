@@ -7,16 +7,19 @@ const stats = [
   {
     num: 14,
     text: "Years of Experience",
+    step: 1,
   },
   {
     word: "Over",
     num: 1000,
     icon: "+",
     text: "Satisfied Clients",
+    step: 100,
   },
   {
     num: 20,
     text: "Minutes Start to Finish",
+    step: 1,
   },
 ];
 
@@ -35,9 +38,11 @@ const Stats = () => {
                   {item.word}
                 </p>
                 <CountUp
+                  start={0}
                   end={item.num}
                   delay={0}
                   duration={3.5}
+                  increment={item.step}
                   className="text-3xl lg:text-5xl font-semibold"
                 />
                 <p className="text-3xl lg:text-5xl font-semibold max-lg:hidden">

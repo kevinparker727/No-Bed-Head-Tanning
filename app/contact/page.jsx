@@ -41,7 +41,7 @@ const Contact = () => {
           </div>
         </div>
         <div className="flex flex-col justify-center h-[13vh] ml-[10%]">
-          <h2 className="h2 max-sm:text-3xl">We love hearing from you . . .</h2>
+          <h1 className="h2 max-sm:text-3xl">We love hearing from you . . .</h1>
         </div>
       </div>
       <form ref={form} onSubmit={sendEmail} className="container mx-auto">

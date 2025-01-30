@@ -17,7 +17,7 @@ const Gallery = () => {
           </div>
         </div>
         <div className="flex flex-col h-[15vh] justify-center ml-[7%] md:ml-[10%]">
-          <h2 className="h2 text-2xl md:text-3xl lg:text-4xl">
+          <h2 className="h1 text-2xl md:text-3xl lg:text-4xl">
             A few of the events we tan for . . .
           </h2>
         </div>

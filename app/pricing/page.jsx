@@ -86,9 +86,9 @@ const Pricing = () => {
       <div className="bg-pricing-hero-image bg-cover bg-no-repeat bg-right lg:bg-center w-full h-[90vh]">
         <Header />
         <div className="w-full flex justify-center items-center h-4/5">
-          <h2 className="h2 w-fit mx-[10%] font-primary text-white font-thin text-center p-8 bg-stone-500/50 rounded-2xl drop-shadow-xl backdrop-blur-md opacity-85">
+          <h1 className="h2 w-fit mx-[10%] font-primary text-white font-thin text-center p-8 bg-stone-500/50 rounded-2xl drop-shadow-xl backdrop-blur-md opacity-85">
             Organic, Natural Tans Tailored to Your Skin
-          </h2>
+          </h1>
         </div>
       </div>
 
