@@ -59,7 +59,7 @@ const Contact = () => {
             <label htmlFor="first-name" className=" text-sm/6 font-medium">
               First name
             </label>
-            <div className="mt-2">
+            <div className="">
               <Input
                 id="first-name"
                 name="first_name"
@@ -73,7 +73,7 @@ const Contact = () => {
             <label htmlFor="last-name" className=" text-sm/6 font-medium">
               Last name
             </label>
-            <div className="mt-2">
+            <div className="">
               <Input
                 id="last-name"
                 name="last_name"
@@ -87,7 +87,7 @@ const Contact = () => {
             <label htmlFor="email" className=" text-sm/6 font-medium">
               Email address
             </label>
-            <div className="mt-2">
+            <div className="">
               <Input
                 id="email"
                 name="email"
@@ -101,7 +101,7 @@ const Contact = () => {
             <label htmlFor="street-address" className=" text-sm/6 font-medium">
               Street address
             </label>
-            <div className="mt-2">
+            <div className="">
               <Input
                 id="street-address"
                 name="address"
@@ -115,7 +115,7 @@ const Contact = () => {
             <label htmlFor="city" className=" text-sm/6 font-medium">
               City
             </label>
-            <div className="mt-2">
+            <div className="">
               <Input
                 id="city"
                 name="city"
@@ -129,7 +129,7 @@ const Contact = () => {
             <label htmlFor="region" className=" text-sm/6 font-medium">
               State / Province
             </label>
-            <div className="mt-2">
+            <div className="">
               <Input
                 id="region"
                 name="state"
@@ -143,7 +143,7 @@ const Contact = () => {
             <label htmlFor="postal-code" className=" text-sm/6 font-medium">
               ZIP / Postal code
             </label>
-            <div className="mt-2">
+            <div className="">
               <Input
                 id="postal-code"
                 name="zip"
@@ -154,9 +154,9 @@ const Contact = () => {
           </div>
           <div className="col-span-full">
             <label htmlFor="about" className=" text-sm/6 font-medium">
-              About
+              Message
             </label>
-            <div className="mt-2">
+            <div className="">
               <Textarea id="about" name="message" rows={6} defaultValue={""} />
             </div>
             <p className="mt-3 text-sm/6 text-white/80">

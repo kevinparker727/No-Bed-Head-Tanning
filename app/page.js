@@ -1,15 +1,13 @@
 "use client";
 
-import React, { useRef } from "react";
+import React from "react";
 import ContactButton from "@/components/ContactButton";
 import Stats from "@/components/Stats";
 import Header from "@/components/Header";
 import Image from "next/image";
-import { easeIn, easeInOut, easeOut, motion } from "framer-motion";
-import { delay } from "framer-motion";
+import { easeInOut, motion } from "framer-motion";
 
 const Home = () => {
-  const scrollRef = useRef(null);
   return (
     <section className="h-full">
       <div className="h-[100vh]">
@@ -27,6 +25,7 @@ const Home = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5, delay: 3.5, ease: easeInOut }}
+            viewport={{ once: true }}
             className="flex flex-col gap-5 md:gap-7"
           >
             <div className="h2 font-secondary">
@@ -38,14 +37,14 @@ const Home = () => {
           </motion.div>
         </div>
       </div>
-      <div className="flex items-center h-full w-full px-10 md:px-0 mt-10 mb-12 ">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1 }}
-          className="text-center md:w-full xl:w-1/2"
-        >
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1.5 }}
+        viewport={{ once: true }}
+        className="flex items-center h-full w-full px-10 md:px-0 mt-10 mb-12"
+      >
+        <div className="text-center md:w-full xl:w-1/2">
           <p className="text-lg font-light tracking-wider leading-loose px-8 md:px-20 lg:ml-20  xl:ml-40">
             No Bed Head Tanning brings the perfect glow directly to you with our
             convenient mobile service in Cornwall, NY. We believe that looking
@@ -56,15 +55,13 @@ const Home = () => {
             your natural beauty while keeping your skin nourished and radiant.
             Let us help you glow with confidence and ease, wherever you are.
           </p>
-        </motion.div>
+        </div>
 
-        <div
-          // ref={scrollRef}
-          // initial={{ opacity: 0, translateX: 600 }}
-          // animate={{ opacity: 1, translateX: 0 }}
-          // whileInView={{ opacity: 1}}
-          // viewport={{ once: true, root: scrollRef }}
-          // transition={{ duration: 1, ease: easeIn }}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.5, delay: 1 }}
           className="w-1/2 flex justify-center max-md:hidden"
         >
           <Image
@@ -74,12 +71,18 @@ const Home = () => {
             height={600}
             className="w-[300px] h-[450px] lg:w-[350px] lg:h-[500px] xl:w-[450px] xl:h-[600px]"
           />
-        </div>
+        </motion.div>
         <div className="flex flex-col items-center pt-8 pb-16"></div>
-      </div>
-      <div className="flex justify-center my-20">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.5 }}
+        className="flex justify-center my-20"
+      >
         <ContactButton />
-      </div>
+      </motion.div>
     </section>
   );
 };

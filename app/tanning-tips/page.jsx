@@ -1,5 +1,12 @@
-import Header from "@/components/Header";
+"use client";
+
 import React from "react";
+import { motion, easeInOut } from "framer-motion";
+import Header from "@/components/Header";
+
+const beforeTanTips = {
+  tip: "Always shave and exfoliate the day before your appointment. If you don't, you risk having a blotchy, uneven result.",
+};
 
 const tanningTips = () => {
   return (
@@ -8,20 +15,38 @@ const tanningTips = () => {
         <div className="bg-tanning-tips-hero bg-cover bg-no-repeat bg-top xl:bg-center w-full h-[85vh]">
           <Header />
           <div className="w-full flex justify-center items-center h-4/5">
-            <h2 className="h2 w-fit mx-[10%] font-primary text-white font-thin text-center p-8 bg-stone-500/50 rounded-2xl drop-shadow-xl backdrop-blur-md opacity-90">
+            <motion.h2
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.75 }}
+              viewport={{ once: true }}
+              className="h2 w-fit mx-[10%] font-primary text-white font-thin text-center p-8 bg-stone-500/50 rounded-2xl drop-shadow-xl backdrop-blur-md opacity-90"
+            >
               What to Expect
-            </h2>
+            </motion.h2>
           </div>
         </div>
         <div className="h-[15vh] flex items-center ml-5 md:ml-8 lg:ml-16 xl:ml-24">
-          <h1 className="h2 text-2xl sm:text-3xl">
+          <motion.h1
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.5, delay: 0.85 }}
+            viewport={{ once: true }}
+            className="h2 text-2xl sm:text-3xl"
+          >
             A brief word about spray tans . . .
-          </h1>
+          </motion.h1>
         </div>
       </div>
       <div className="container mx-auto">
-        <div className=" mx-[3%] flex flex-col justify-center gap-10  md:gap-16">
-          <div className="px-4 py-2 lg:p-6 lg:hover:scale-105 lg:hover:text-white rounded-xl shadow-2xl shadow-zinc-900 bg-stone-500/50 transition-all duration-300">
+        <div className="mx-[3%] flex flex-col justify-center gap-10 md:gap-16">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1.5, ease: easeInOut }}
+            viewport={{ once: true }}
+            className="px-4 my-2 lg:p-6 lg:hover:scale-105 lg:hover:text-white rounded-xl shadow-2xl shadow-zinc-900 bg-stone-500/50 transition-all duration-300"
+          >
             <p className="p text-center my-6 font-light">
               Spray tans are a group effort between the client and the artist. A
               long lasting, high quality tan depends on both the skill of the
@@ -40,18 +65,32 @@ const tanningTips = () => {
               proper bathing technique, etc.) will heavily influence the quality
               and duration of the tan.
             </p>
-          </div>
+          </motion.div>
           <div className="w-full flex justify-center">
-            <p className="text-center w-fit font-bold text-xl p-5 rounded-lg bg-stone-500/85">
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1, ease: easeInOut }}
+              viewport={{ once: true }}
+              className="text-center w-fit font-bold text-xl p-5 rounded-lg bg-stone-500/85"
+            >
               AVOID DOVE SOAP AT ALL TIMES!
-            </p>
+            </motion.p>
           </div>
         </div>
         <div className="flex justify-center mt-14 mb-10">
           <span className="border-[1px] w-11/12 border-accent"></span>
         </div>
-        <div className=" mt-12">
-          <h2 className="h2 w-full text-center my-6">Before the Tan</h2>
+        <div className="mt-12">
+          <motion.h2
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1, ease: easeInOut }}
+            viewport={{ once: true }}
+            className="h2 w-full text-center my-6"
+          >
+            Before the Tan
+          </motion.h2>
           <ul className="list-disc list-inside marker:text-accent flex flex-col gap-6 text-center">
             <li>
               Always shave and exfoliate the day before your appointment. If you
@@ -92,16 +131,30 @@ const tanningTips = () => {
             </li>
           </ul>
           <div className="w-full my-16 flex justify-center">
-            <p className="text-center w-fit font-bold text-xl p-5 rounded-lg bg-stone-500/85">
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1, ease: easeInOut }}
+              viewport={{ once: true }}
+              className="text-center w-fit font-bold text-xl p-5 rounded-lg bg-stone-500/85"
+            >
               AVOID DOVE SOAP AT ALL TIMES!
-            </p>
+            </motion.p>
           </div>
         </div>
         <div className="flex justify-center my-10">
           <span className="border-[1px] w-11/12 border-accent"></span>
         </div>
         <div className="mb-16 mt-12">
-          <h2 className="h2 w-full text-center my-6">After the Tan</h2>
+          <motion.h2
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1, ease: easeInOut }}
+            viewport={{ once: true }}
+            className="h2 w-full text-center my-6"
+          >
+            After the Tan
+          </motion.h2>
           <ul className="list-disc list-inside marker:text-accent flex flex-col gap-6 text-center">
             <li>
               Do not shower or exercise for 6-8 hours after your tan. Shower
@@ -140,9 +193,15 @@ const tanningTips = () => {
             </li>
           </ul>
           <div className="w-full mt-10 flex justify-center">
-            <p className="text-center w-fit font-bold text-xl p-5 rounded-lg bg-stone-500/85">
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1, ease: easeInOut }}
+              viewport={{ once: true }}
+              className="text-center w-fit font-bold text-xl p-5 rounded-lg bg-stone-500/85"
+            >
               AVOID DOVE SOAP AT ALL TIMES!
-            </p>
+            </motion.p>
           </div>
         </div>
       </div>

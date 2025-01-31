@@ -1,5 +1,8 @@
+"use client";
+
 import Header from "@/components/Header";
 import React from "react";
+import { motion, easeInOut } from "framer-motion";
 
 const newTans = [
   {
@@ -86,13 +89,19 @@ const Pricing = () => {
       <div className="bg-pricing-hero-image bg-cover bg-no-repeat bg-right lg:bg-center w-full h-[90vh]">
         <Header />
         <div className="w-full flex justify-center items-center h-4/5">
-          <h1 className="h2 w-fit mx-[10%] font-primary text-white font-thin text-center p-8 bg-stone-500/50 rounded-2xl drop-shadow-xl backdrop-blur-md opacity-85">
+          <motion.h1
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            className="h2 w-fit mx-[10%] font-primary text-white font-thin text-center p-8 bg-stone-500/50 rounded-2xl drop-shadow-xl backdrop-blur-md opacity-85"
+          >
             Organic, Natural Tans Tailored to Your Skin
-          </h1>
+          </motion.h1>
         </div>
       </div>
 
-      <p className="text-xs text-white/70 mt-8 text-center">
+      <p className="text-xs text-white/70 mt-8 text-center h-[10vh]">
         *Please see
         <a
           href="/disclosures"
@@ -105,21 +114,39 @@ const Pricing = () => {
       </p>
       <div className="container mx-auto lg:flex justify-around">
         {/* Individual Rates  */}
-        <div className="text-center my-10">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1, ease: easeInOut }}
+          viewport={{ once: true }}
+          className="text-center mb-10"
+        >
           <h3 className="h3 font-secondary text-4xl">Individual Rates</h3>
-        </div>
+        </motion.div>
 
-        {/* Package Rates  */}
-        <div className="text-center my-10 max-lg:hidden">
+        {/* Desktop Package Rates  */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5, ease: easeInOut }}
+          viewport={{ once: true }}
+          className="text-center mb-10 max-lg:hidden"
+        >
           <h3 className="h3 font-secondary text-4xl">Package Rates</h3>
-        </div>
+        </motion.div>
       </div>
 
       <div className="container lg:flex justify-around w-full">
         <div className="flex justify-center gap-12 mb-2 xl:w-1/2">
-          {/* Column 1  */}
+          {/* Individual Rates Column 1  */}
 
-          <div className="text-center p-4 py-6 lg:h-[500px] xl:h-[400px] lg:p-6 lg:hover:scale-110 rounded-xl shadow-2xl shadow-zinc-900 bg-stone-500/50 transition-all duration-300">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5, ease: easeInOut }}
+            viewport={{ once: true }}
+            className="text-center p-4 py-6 lg:h-[500px] xl:h-[400px] lg:p-6 lg:hover:scale-110 rounded-xl shadow-2xl shadow-zinc-900 bg-stone-500/50 transition-all duration-300"
+          >
             <h3 className="h3 font-normal underline decoration-accent underline-offset-8 mb-5">
               Fresh Tans
             </h3>
@@ -134,10 +161,16 @@ const Pricing = () => {
                 </ul>
               );
             })}
-          </div>
-          {/* Column 2  */}
+          </motion.div>
+          {/* Individual Rates Column 2  */}
 
-          <div className="text-center p-4 py-6 lg:p-6 lg:h-[460px] xl:h-[400px] lg:hover:scale-110 rounded-xl shadow-2xl shadow-zinc-900 bg-stone-500/50 transition-all duration-300">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1, ease: easeInOut }}
+            viewport={{ once: true }}
+            className="text-center p-4 py-6 lg:p-6 lg:h-[460px] xl:h-[400px] lg:hover:scale-110 rounded-xl shadow-2xl shadow-zinc-900 bg-stone-500/50 transition-all duration-300"
+          >
             <h3 className="h3 font-normal underline decoration-accent underline-offset-8 mb-5">
               Touch Ups
             </h3>
@@ -152,22 +185,30 @@ const Pricing = () => {
                 </ul>
               );
             })}
-          </div>
+          </motion.div>
         </div>
-        {/* <p className="text-center text-sm text-white/50 mb-3 lg:hidden">
-          *Touch Up prices are subject to increase based on each clients'
-          individual needs.
-        </p> */}
 
-        {/* Package Rates  */}
-        <div className="text-center my-10 lg:hidden">
-          <h3 className="h3 font-secondary text-3xl">Package Rates</h3>
-        </div>
+        {/* Mobile Package Rates  */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1.5, ease: easeInOut }}
+          viewport={{ once: true }}
+          className="text-center my-10 lg:hidden"
+        >
+          <h3 className="h3 font-secondary text-4xl">Package Rates</h3>
+        </motion.div>
 
         <div className="mb-2 grid grid-cols-6 xl:w-1/2 gap-5">
-          {/* Column 1  */}
+          {/* Package Rates Column 1  */}
 
-          <div className="col-start-2 col-span-2 text-center p-4 py-6 lg:p-6 lg:hover:scale-110 rounded-xl shadow-2xl shadow-zinc-900 bg-stone-500/50 transition-all duration-300">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5, ease: easeInOut }}
+            viewport={{ once: true }}
+            className="col-start-2 col-span-2 text-center p-4 py-6 lg:p-6 lg:hover:scale-110 rounded-xl shadow-2xl shadow-zinc-900 bg-stone-500/50 transition-all duration-300"
+          >
             <h3 className="h3 font-normal underline decoration-accent underline-offset-8 mb-5">
               Non- <br />
               <br />
@@ -184,10 +225,16 @@ const Pricing = () => {
                 </ul>
               );
             })}
-          </div>
-          {/* Column 2  */}
+          </motion.div>
+          {/* Package Rates Column 2  */}
 
-          <div className="col-start-4 col-span-2 text-center p-4 py-6 lg:p-6 lg:hover:scale-110 rounded-xl shadow-2xl shadow-zinc-900 bg-stone-500/50 transition-all duration-300">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1, ease: easeInOut }}
+            viewport={{ once: true }}
+            className="col-start-4 col-span-2 text-center p-4 py-6 lg:p-6 lg:hover:scale-110 rounded-xl shadow-2xl shadow-zinc-900 bg-stone-500/50 transition-all duration-300"
+          >
             <h3 className="h3 font-normal underline decoration-accent underline-offset-8 mb-5">
               Students
             </h3>
@@ -202,10 +249,16 @@ const Pricing = () => {
                 </ul>
               );
             })}
-          </div>
-          {/* Column 3  */}
+          </motion.div>
+          {/* Package Rates Column 3  */}
 
-          <div className="text-center col-start-2 col-span-4 lg:mt-5 p-4 py-6 lg:p-6 lg:hover:scale-110 rounded-xl shadow-2xl shadow-zinc-900 bg-stone-500/50 transition-all duration-300">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5, ease: easeInOut }}
+            viewport={{ once: true }}
+            className="text-center col-start-2 col-span-4 lg:mt-5 p-4 py-6 lg:p-6 lg:hover:scale-110 rounded-xl shadow-2xl shadow-zinc-900 bg-stone-500/50 transition-all duration-300"
+          >
             <div className="text-center mb-5">
               <h3 className="h3 font-normal underline decoration-accent underline-offset-8">
                 <br className="lg:hidden" />
@@ -226,7 +279,7 @@ const Pricing = () => {
                 </ul>
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

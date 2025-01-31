@@ -42,6 +42,8 @@ const Stats = () => {
                   end={item.num}
                   delay={0}
                   duration={3.5}
+                  // useEasing
+                  // easingFn={easingFn}
                   increment={item.step}
                   className="text-3xl lg:text-5xl font-semibold"
                 />

@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { motion, easeInOut } from "framer-motion";
 import Header from "@/components/Header";
 
 const Disclosures = () => {
@@ -8,14 +11,26 @@ const Disclosures = () => {
         <div className="bg-disclosures-hero bg-cover bg-no-repeat bg-top xl:bg-center w-full h-[95vh] mb-10">
           <Header />
           <div className="w-full flex justify-center items-center h-4/5">
-            <h2 className="h2 w-fit mx-[10%] font-primary text-white font-thin text-center p-8 bg-stone-500/50 rounded-2xl drop-shadow-xl backdrop-blur-md opacity-90">
+            <motion.h2
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+              className="h2 w-fit mx-[10%] font-primary text-white font-thin text-center p-8 bg-stone-500/50 rounded-2xl drop-shadow-xl backdrop-blur-md opacity-90"
+            >
               Our Company Ethics and Policies
-            </h2>
+            </motion.h2>
           </div>
         </div>
       </div>
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 mb-32">
-        <div className="order-1 p-4 py-6 lg:p-6 lg:hover:scale-110 rounded-xl shadow-2xl shadow-zinc-900 bg-stone-500/50 transition-all duration-300">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.2, ease: easeInOut }}
+          viewport={{ once: true }}
+          className="order-1 p-4 my-3 lg:p-6 lg:hover:scale-110 rounded-xl shadow-2xl shadow-zinc-900 bg-stone-500/50 transition-all duration-300"
+        >
           <h2 className="h2 text-center mb-5 underline underline-offset-8 decoration-2 decoration-accent">
             Privacy Policy
           </h2>
@@ -31,8 +46,14 @@ const Disclosures = () => {
               and safe.
             </li>
           </ul>
-        </div>
-        <div className="order-2 p-4 py-6 lg:p-6 lg:hover:scale-110 rounded-xl shadow-2xl shadow-zinc-900 bg-stone-500/50 transition-all duration-300">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5, ease: easeInOut }}
+          viewport={{ once: true }}
+          className="order-2 p-4 my-3 lg:p-6 lg:hover:scale-110 rounded-xl shadow-2xl shadow-zinc-900 bg-stone-500/50 transition-all duration-300"
+        >
           <h2 className="h2 text-center mb-5 underline underline-offset-8 decoration-2 decoration-accent">
             Pricing
           </h2>
@@ -48,8 +69,14 @@ const Disclosures = () => {
             </li>
             <li>Prices are subject to change.</li>
           </ul>
-        </div>
-        <div className="order-3 lg:order-5 lg:col-span-2 lg:mx-16 p-4 py-6 lg:p-6 lg:py-8 lg:hover:scale-110 rounded-xl shadow-2xl shadow-zinc-900 bg-stone-500/50 transition-all duration-300">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.2, ease: easeInOut }}
+          viewport={{ once: true }}
+          className="order-3 lg:order-5 lg:col-span-2 lg:mx-16 p-4 py-6 lg:p-6 lg:py-8 lg:hover:scale-110 rounded-xl shadow-2xl shadow-zinc-900 bg-stone-500/50 transition-all duration-300"
+        >
           <h2 className="h2 text-center mb-5 underline underline-offset-8 decoration-2 decoration-accent">
             Minors and Pregnant Clients
           </h2>
@@ -66,8 +93,14 @@ const Disclosures = () => {
               process.
             </li>
           </ul>
-        </div>
-        <div className="order-4 p-4 py-6 lg:p-6 lg:hover:scale-110 rounded-xl shadow-2xl shadow-zinc-900 bg-stone-500/50 transition-all duration-300">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5, ease: easeInOut }}
+          viewport={{ once: true }}
+          className="order-4 p-4 py-6 lg:p-6 lg:hover:scale-110 rounded-xl shadow-2xl shadow-zinc-900 bg-stone-500/50 transition-all duration-300"
+        >
           <h2 className="h2 text-center mb-5 underline underline-offset-8 decoration-2 decoration-accent">
             Appointments
           </h2>
@@ -81,8 +114,14 @@ const Disclosures = () => {
             </li>
             <li>We reserve the right to refuse service to anyone.</li>
           </ul>
-        </div>
-        <div className="order-5 lg:order-4 p-4 py-6 lg:p-6 lg:hover:scale-110 rounded-xl shadow-2xl shadow-zinc-900 bg-stone-500/50 transition-all duration-300">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.2, ease: easeInOut }}
+          viewport={{ once: true }}
+          className="order-5 lg:order-4 p-4 py-6 lg:p-6 lg:hover:scale-110 rounded-xl shadow-2xl shadow-zinc-900 bg-stone-500/50 transition-all duration-300"
+        >
           <h2 className="h2 text-center mb-5 underline underline-offset-8 decoration-2 decoration-accent">
             Cancellations and Rescheduling
           </h2>
@@ -100,7 +139,7 @@ const Disclosures = () => {
               completed.
             </li>
           </ul>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
