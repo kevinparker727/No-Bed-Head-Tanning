@@ -4,48 +4,134 @@ import Header from "@/components/Header";
 import React from "react";
 import { motion, easeInOut } from "framer-motion";
 
-const newTans = [
+const individualStudioNewTans = [
   {
-    title: "Full Body (non-student)",
+    title: "Full Body",
     price: 75,
   },
   {
-    title: "Full Body (student)",
-    price: 60,
-  },
-  {
     title: "Upper Body and Face",
-    price: 45,
+    price: 40,
   },
   {
     title: "Lower Body",
+    price: 40,
+  },
+  {
+    title: "Full Body - Student",
+    price: 60,
+  },
+  {
+    title: "Upper Body and Face - Student",
+    price: 30,
+  },
+  {
+    title: "Lower Body - Student",
+    price: 30,
+  },
+];
+
+const individualStudioTouchUps = [
+  {
+    title: "Full Body",
+    price: 20,
+  },
+  {
+    title: "Upper / Lower Half",
+    price: 20,
+  },
+  {
+    title: "Face",
+    price: 10,
+  },
+  {
+    title: "Hands / Arms",
+    price: 15,
+  },
+  {
+    title: "Full Body - Student",
+    price: 15,
+  },
+  {
+    title: "Upper / Lower Half - Student",
+    price: 15,
+  },
+  {
+    title: "Face - Student",
+    price: 5,
+  },
+  {
+    title: "Hands / Arms - Student",
+    price: 10,
+  },
+];
+
+const individualMobileNewTans = [
+  {
+    title: "Full Body",
+    price: 85,
+  },
+  {
+    title: "Upper Body and Face",
+    price: 50,
+  },
+  {
+    title: "Lower Body",
+    price: 50,
+  },
+  {
+    title: "Full Body - Student",
+    price: 75,
+  },
+  {
+    title: "Upper Body and Face - Student",
+    price: 45,
+  },
+  {
+    title: "Lower Body - Student",
     price: 45,
   },
 ];
 
-const touchUps = [
+const individualMobileTouchUps = [
   {
     title: "Full Body",
-    price: 35,
+    price: 75,
   },
   {
     title: "Upper / Lower Half",
-    price: 25,
+    price: 55,
   },
   {
     title: "Face",
-    price: 20,
+    price: 35,
   },
   {
     title: "Hands / Arms",
-    price: 20,
+    price: 35,
+  },
+  {
+    title: "Full Body (Student)",
+    price: 65,
+  },
+  {
+    title: "Upper / Lower Half (Student)",
+    price: 40,
+  },
+  {
+    title: "Face (Student)",
+    price: 30,
+  },
+  {
+    title: "Hands / Arms (Student)",
+    price: 30,
   },
 ];
 
-const nonStudentPackage = [
+const packageStudioNonStudent = [
   {
     title: "3 Tans",
-    price: 215,
+    price: 225,
   },
   {
     title: "5 Tans",
@@ -57,10 +143,10 @@ const nonStudentPackage = [
   },
 ];
 
-const studentPackage = [
+const packageStudioStudent = [
   {
     title: "3 Tans",
-    price: 165,
+    price: 175,
   },
   {
     title: "5 Tans",
@@ -68,18 +154,37 @@ const studentPackage = [
   },
   {
     title: "8 Tans",
-    price: 425,
+    price: 465,
   },
 ];
 
-const seasonalPackage = [
+const packageMobileNonStudent = [
   {
-    title: "6 People (3 Couples)",
-    price: 280,
+    title: "3 Tans",
+    price: 240,
   },
   {
-    title: "10 People (5 Couples)",
-    price: 540,
+    title: "5 Tans",
+    price: 400,
+  },
+  {
+    title: "8 Tans",
+    price: 620,
+  },
+];
+
+const packageMobileStudent = [
+  {
+    title: "3 Tans",
+    price: 200,
+  },
+  {
+    title: "5 Tans",
+    price: 325,
+  },
+  {
+    title: "8 Tans",
+    price: 500,
   },
 ];
 
@@ -101,7 +206,7 @@ const Pricing = () => {
         </div>
       </div>
 
-      <p className="text-xs text-white/70 mt-8 text-center h-[10vh]">
+      <p className="text-xs text-white/70 m-8 text-center">
         *Please see
         <a
           href="/disclosures"
@@ -112,174 +217,371 @@ const Pricing = () => {
         page for a full breakdown on exceptions to these prices and potential
         changes.
       </p>
-      <div className="container mx-auto lg:flex justify-around">
-        {/* Individual Rates  */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1, ease: easeInOut }}
-          viewport={{ once: true }}
-          className="text-center mb-10"
-        >
-          <h3 className="h3 font-secondary text-4xl">Individual Rates</h3>
-        </motion.div>
-
-        {/* Desktop Package Rates  */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.5, ease: easeInOut }}
-          viewport={{ once: true }}
-          className="text-center mb-10 max-lg:hidden"
-        >
-          <h3 className="h3 font-secondary text-4xl">Package Rates</h3>
-        </motion.div>
+      <div className="w-full flex justify-center">
+        <p className=" w-fit text-sm bg-stone-600 py-6 px-6 rounded-lg text-white/70 text-center mb-10 h-[10vh]">
+          Note: In-studio touch ups scheduled within 24 hours of your original
+          tan are free of charge.
+        </p>
       </div>
-
-      <div className="container lg:flex justify-around w-full">
-        <div className="flex justify-center gap-12 mb-2 xl:w-1/2">
-          {/* Individual Rates Column 1  */}
-
+      {/* Individual Rates */}
+      <div className="container mx-auto">
+        <div className="container mx-auto">
+          {/* Individual Rates  */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5, ease: easeInOut }}
+            transition={{ duration: 1, ease: easeInOut }}
             viewport={{ once: true }}
-            className="text-center p-4 py-6 lg:h-[500px] xl:h-[400px] lg:p-6 lg:hover:scale-110 rounded-xl shadow-2xl shadow-zinc-900 bg-stone-500/50 transition-all duration-300"
+            className="text-center"
           >
-            <h3 className="h3 font-normal underline decoration-accent underline-offset-8 mb-5">
-              Fresh Tans
+            <h3 className="h3 font-secondary text-4xl mb-8">
+              Individual Rates
             </h3>
-            {newTans.map((item, index) => {
-              return (
-                <ul
-                  key={index}
-                  className="list-disc list-inside marker:text-accent mb-4"
-                >
-                  <li>{item.title}</li>
-                  <span>${item.price}</span>
-                </ul>
-              );
-            })}
-          </motion.div>
-          {/* Individual Rates Column 2  */}
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1, ease: easeInOut }}
-            viewport={{ once: true }}
-            className="text-center p-4 py-6 lg:p-6 lg:h-[460px] xl:h-[400px] lg:hover:scale-110 rounded-xl shadow-2xl shadow-zinc-900 bg-stone-500/50 transition-all duration-300"
-          >
-            <h3 className="h3 font-normal underline decoration-accent underline-offset-8 mb-5">
-              Touch Ups
-            </h3>
-            {touchUps.map((item, index) => {
-              return (
-                <ul
-                  key={index}
-                  className="list-disc list-inside marker:text-accent mb-4"
-                >
-                  <li>{item.title}</li>
-                  <span>${item.price}</span>
-                </ul>
-              );
-            })}
+            {/* <h3 className="h3 font-primary font-thin text-2xl underline underline-offset-4 decoration-accent decoration-2">
+            Mobile mobile size
+          </h3> */}
           </motion.div>
         </div>
 
-        {/* Mobile Package Rates  */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1.5, ease: easeInOut }}
-          viewport={{ once: true }}
-          className="text-center my-10 lg:hidden"
-        >
-          <h3 className="h3 font-secondary text-4xl">Package Rates</h3>
-        </motion.div>
-
-        <div className="mb-2 grid grid-cols-6 xl:w-1/2 gap-5">
-          {/* Package Rates Column 1  */}
-
+        {/* Desktop Studio Rates  */}
+        <div className="container w-full mx-auto lg:flex justify-around">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5, ease: easeInOut }}
             viewport={{ once: true }}
-            className="col-start-2 col-span-2 text-center p-4 py-6 lg:p-6 lg:hover:scale-110 rounded-xl shadow-2xl shadow-zinc-900 bg-stone-500/50 transition-all duration-300"
+            className="text-center mb-10 max-lg:hidden"
           >
-            <h3 className="h3 font-normal underline decoration-accent underline-offset-8 mb-5">
-              Non- <br />
-              <br />
-              Students
+            {/* <h3 className="h3 font-secondary text-4xl mb-5">Package Rates</h3> */}
+            <h3 className="h3 font-primary font-thin text-2xl underline underline-offset-4 decoration-accent decoration-2">
+              In-Studio
             </h3>
-            {nonStudentPackage.map((item, index) => {
-              return (
-                <ul
-                  key={index}
-                  className="list-disc list-inside marker:text-accent mb-4"
-                >
-                  <li>{item.title}</li>
-                  <span>${item.price}</span>
-                </ul>
-              );
-            })}
           </motion.div>
-          {/* Package Rates Column 2  */}
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1, ease: easeInOut }}
-            viewport={{ once: true }}
-            className="col-start-4 col-span-2 text-center p-4 py-6 lg:p-6 lg:hover:scale-110 rounded-xl shadow-2xl shadow-zinc-900 bg-stone-500/50 transition-all duration-300"
-          >
-            <h3 className="h3 font-normal underline decoration-accent underline-offset-8 mb-5">
-              Students
-            </h3>
-            {studentPackage.map((item, index) => {
-              return (
-                <ul
-                  key={index}
-                  className="list-disc list-inside marker:text-accent mb-4"
-                >
-                  <li>{item.title}</li>
-                  <span>${item.price}</span>
-                </ul>
-              );
-            })}
-          </motion.div>
-          {/* Package Rates Column 3  */}
-
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5, ease: easeInOut }}
             viewport={{ once: true }}
-            className="text-center col-start-2 col-span-4 lg:mt-5 p-4 py-6 lg:p-6 lg:hover:scale-110 rounded-xl shadow-2xl shadow-zinc-900 bg-stone-500/50 transition-all duration-300"
+            className="text-center mb-10 max-lg:hidden"
           >
-            <div className="text-center mb-5">
-              <h3 className="h3 font-normal underline decoration-accent underline-offset-8">
-                <br className="lg:hidden" />
-                Prom / Homecoming
+            {/* <h3 className="h3 font-secondary text-4xl mb-5">Package Rates</h3> */}
+            <h3 className="h3 font-primary font-thin text-2xl underline underline-offset-4 decoration-accent decoration-2">
+              Mobile
+            </h3>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5, ease: easeInOut }}
+            viewport={{ once: true }}
+            className="text-center mb-10 lg:hidden"
+          >
+            {/* <h3 className="h3 font-secondary text-4xl mb-5">Package Rates</h3> */}
+            <h3 className="h3 font-primary font-thin text-2xl underline underline-offset-4 decoration-accent decoration-2">
+              In-Studio
+            </h3>
+          </motion.div>
+        </div>
+
+        <div className="container lg:flex justify-around w-full xl:gap-10">
+          <div className="flex justify-center gap-5 mb-2 xl:w-1/2">
+            {/* Individual Rates - Mobile Column 1  */}
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.5, ease: easeInOut }}
+              viewport={{ once: true }}
+              className="text-center p-4 py-6 lg:h-[500px] xl:h-[590px] lg:p-6 lg:hover:scale-110 rounded-xl shadow-2xl shadow-zinc-900 bg-stone-500/50 transition-all duration-300"
+            >
+              <h3 className="h3 font-normal underline decoration-accent underline-offset-8 mb-5">
+                Fresh Tans
               </h3>
-              <p className="text-xs text-white/60 mt-5">
-                *Dates vary per school.
-              </p>
-            </div>
-            {seasonalPackage.map((item, index) => {
-              return (
-                <ul
-                  key={index}
-                  className="list-disc list-inside marker:text-accent mb-2"
-                >
-                  <li>{item.title}</li>
-                  <span>${item.price}</span>
-                </ul>
-              );
-            })}
+              {individualStudioNewTans.map((item, index) => {
+                return (
+                  <ul
+                    key={index}
+                    className="list-disc list-inside marker:text-accent mb-4"
+                  >
+                    <li>{item.title}</li>
+                    <span>${item.price}</span>
+                  </ul>
+                );
+              })}
+            </motion.div>
+            {/* Individual Rates - Mobile Column 2  */}
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 1, ease: easeInOut }}
+              viewport={{ once: true }}
+              className="text-center p-4 py-6 lg:p-6 lg:h-[460px] xl:h-[780px] lg:hover:scale-110 rounded-xl shadow-2xl shadow-zinc-900 bg-stone-500/50 transition-all duration-300"
+            >
+              <h3 className="h3 font-normal underline decoration-accent underline-offset-8 mb-5">
+                Touch Ups
+              </h3>
+              {individualStudioTouchUps.map((item, index) => {
+                return (
+                  <ul
+                    key={index}
+                    className="list-disc list-inside marker:text-accent mb-4"
+                  >
+                    <li>{item.title}</li>
+                    <span>${item.price}</span>
+                  </ul>
+                );
+              })}
+            </motion.div>
+          </div>
+
+          {/* Mobile-size Individual Rates  */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1.5, ease: easeInOut }}
+            viewport={{ once: true }}
+            className="text-center my-10 lg:hidden"
+          >
+            {/* <h3 className="h3 font-secondary text-4xl mb-5">Package Rates</h3> */}
+            <h3 className="h3 font-primary font-thin text-2xl underline underline-offset-4 decoration-accent decoration-2">
+              Mobile
+            </h3>
           </motion.div>
+
+          <div className="flex justify-center gap-5 mb-2 xl:w-1/2">
+            {/* Individual Rates - Mobile Column 3  */}
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.5, ease: easeInOut }}
+              viewport={{ once: true }}
+              className="text-center p-4 py-6 lg:h-[500px] xl:h-[590px] lg:p-6 lg:hover:scale-110 rounded-xl shadow-2xl shadow-zinc-900 bg-stone-500/50 transition-all duration-300"
+            >
+              <h3 className="h3 font-normal underline decoration-accent underline-offset-8 mb-5">
+                Fresh Tans
+              </h3>
+              {individualMobileNewTans.map((item, index) => {
+                return (
+                  <ul
+                    key={index}
+                    className="list-disc list-inside marker:text-accent mb-4"
+                  >
+                    <li>{item.title}</li>
+                    <span>${item.price}</span>
+                  </ul>
+                );
+              })}
+            </motion.div>
+            {/* Individual Rates - Mobile Column 4  */}
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 1, ease: easeInOut }}
+              viewport={{ once: true }}
+              className="text-center p-4 py-6 lg:p-6 lg:h-[460px] xl:h-[780px] lg:hover:scale-110 rounded-xl shadow-2xl shadow-zinc-900 bg-stone-500/50 transition-all duration-300"
+            >
+              <h3 className="h3 font-normal underline decoration-accent underline-offset-8 mb-5">
+                Touch Ups
+              </h3>
+              {individualMobileTouchUps.map((item, index) => {
+                return (
+                  <ul
+                    key={index}
+                    className="list-disc list-inside marker:text-accent mb-4"
+                  >
+                    <li>{item.title}</li>
+                    <span>${item.price}</span>
+                  </ul>
+                );
+              })}
+            </motion.div>
+          </div>
+
+          <div className="mb-2 gap-5"></div>
+        </div>
+      </div>
+
+      {/* Package Rates */}
+      <div className="container mx-auto">
+        <div className="container mx-auto">
+          {/* Individual Rates  */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1, ease: easeInOut }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <h3 className="h3 font-secondary text-4xl mt-14 mb-8">
+              Package Rates
+            </h3>
+            {/* <h3 className="h3 font-primary font-thin text-2xl underline underline-offset-4 decoration-accent decoration-2">
+            Mobile mobile size
+          </h3> */}
+          </motion.div>
+        </div>
+
+        {/* Desktop Studio Rates  */}
+        <div className="container w-full mx-auto lg:flex justify-around">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5, ease: easeInOut }}
+            viewport={{ once: true }}
+            className="text-center mb-10 max-lg:hidden"
+          >
+            {/* <h3 className="h3 font-secondary text-4xl mb-5">Package Rates</h3> */}
+            <h3 className="h3 font-primary font-thin text-2xl underline underline-offset-4 decoration-accent decoration-2">
+              In-Studio
+            </h3>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5, ease: easeInOut }}
+            viewport={{ once: true }}
+            className="text-center mb-10 max-lg:hidden"
+          >
+            {/* <h3 className="h3 font-secondary text-4xl mb-5">Package Rates</h3> */}
+            <h3 className="h3 font-primary font-thin text-2xl underline underline-offset-4 decoration-accent decoration-2">
+              Mobile
+            </h3>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5, ease: easeInOut }}
+            viewport={{ once: true }}
+            className="text-center mb-10 lg:hidden"
+          >
+            {/* <h3 className="h3 font-secondary text-4xl mb-5">Package Rates</h3> */}
+            <h3 className="h3 font-primary font-thin text-2xl underline underline-offset-4 decoration-accent decoration-2">
+              In-Studio
+            </h3>
+          </motion.div>
+        </div>
+
+        <div className="container lg:flex justify-around w-full xl:gap-10">
+          <div className="flex justify-center gap-5 mb-2 xl:w-1/2">
+            {/* Package Rates - In-Studio Non Student  */}
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.5, ease: easeInOut }}
+              viewport={{ once: true }}
+              className="text-center p-4 py-6 lg:h-[500px] xl:h-[320px] lg:p-6 lg:hover:scale-110 rounded-xl shadow-2xl shadow-zinc-900 bg-stone-500/50 transition-all duration-300"
+            >
+              <h3 className="h3 font-normal underline decoration-accent underline-offset-8 mb-5">
+                Non-Student
+              </h3>
+              {packageStudioNonStudent.map((item, index) => {
+                return (
+                  <ul
+                    key={index}
+                    className="list-disc list-inside marker:text-accent mb-4"
+                  >
+                    <li>{item.title}</li>
+                    <span>${item.price}</span>
+                  </ul>
+                );
+              })}
+            </motion.div>
+            {/* Package Rates - In-Studio Student  */}
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 1, ease: easeInOut }}
+              viewport={{ once: true }}
+              className="text-center p-4 py-6 lg:p-6 lg:h-[460px] xl:h-[320px] lg:hover:scale-110 rounded-xl shadow-2xl shadow-zinc-900 bg-stone-500/50 transition-all duration-300"
+            >
+              <h3 className="h3 font-normal underline decoration-accent underline-offset-8 mb-5">
+                Student
+              </h3>
+              {packageStudioStudent.map((item, index) => {
+                return (
+                  <ul
+                    key={index}
+                    className="list-disc list-inside marker:text-accent mb-4"
+                  >
+                    <li>{item.title}</li>
+                    <span>${item.price}</span>
+                  </ul>
+                );
+              })}
+            </motion.div>
+          </div>
+
+          {/* Package Rates - Mobile Non Student  */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1.5, ease: easeInOut }}
+            viewport={{ once: true }}
+            className="text-center my-10 lg:hidden"
+          >
+            {/* <h3 className="h3 font-secondary text-4xl mb-5">Package Rates</h3> */}
+            <h3 className="h3 font-primary font-thin text-2xl underline underline-offset-4 decoration-accent decoration-2">
+              Travel
+            </h3>
+          </motion.div>
+
+          <div className="flex justify-center gap-5 mb-2 xl:w-1/2">
+            {/* Package Rates - Mobile Student  */}
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.5, ease: easeInOut }}
+              viewport={{ once: true }}
+              className="text-center p-4 py-6 lg:h-[500px] xl:h-[320px] lg:p-6 lg:hover:scale-110 rounded-xl shadow-2xl shadow-zinc-900 bg-stone-500/50 transition-all duration-300"
+            >
+              <h3 className="h3 font-normal underline decoration-accent underline-offset-8 mb-5">
+                Non-Student
+              </h3>
+              {packageMobileNonStudent.map((item, index) => {
+                return (
+                  <ul
+                    key={index}
+                    className="list-disc list-inside marker:text-accent mb-4"
+                  >
+                    <li>{item.title}</li>
+                    <span>${item.price}</span>
+                  </ul>
+                );
+              })}
+            </motion.div>
+            {/* Individual Rates - Mobile Column 4  */}
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 1, ease: easeInOut }}
+              viewport={{ once: true }}
+              className="text-center p-4 py-6 lg:p-6 lg:h-[460px] xl:h-[320px] lg:hover:scale-110 rounded-xl shadow-2xl shadow-zinc-900 bg-stone-500/50 transition-all duration-300"
+            >
+              <h3 className="h3 font-normal underline decoration-accent underline-offset-8 mb-5">
+                Student
+              </h3>
+              {packageMobileStudent.map((item, index) => {
+                return (
+                  <ul
+                    key={index}
+                    className="list-disc list-inside marker:text-accent mb-4"
+                  >
+                    <li>{item.title}</li>
+                    <span>${item.price}</span>
+                  </ul>
+                );
+              })}
+            </motion.div>
+          </div>
+
+          <div className="mb-2 gap-5"></div>
         </div>
       </div>
     </section>
