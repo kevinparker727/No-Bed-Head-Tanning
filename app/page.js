@@ -46,14 +46,16 @@ const Home = () => {
       >
         <div className="text-center md:w-full xl:w-1/2">
           <p className="text-lg font-light tracking-wider leading-loose px-8 md:px-20 lg:ml-20  xl:ml-40">
-            No Bed Head Tanning brings the perfect glow directly to you with our
-            convenient mobile service in Cornwall, NY. We believe that looking
-            your best shouldn&#39;t come at the expense of your health, which is
-            why we pride ourselves on using only organic, skin-loving products
-            that deliver a beautiful, even tan without any harsh chemicals.
+            Looking your best shouldn&#39;t come at the expense of your health.
+            At No Bed Head, we pride ourselves on using only organic,
+            skin-loving products that deliver a beautiful, even tan without any
+            harsh chemicals.
             <br /> <br /> Our expert airbrush technique is designed to enhance
             your natural beauty while keeping your skin nourished and radiant.
             Let us help you glow with confidence and ease, wherever you are.
+            <br /> <br /> No Bed Head Tanning will give the perfect glow in our
+            Cornwall, NY studio, or we can bring the glow directly to you with
+            our convenient mobile service.
           </p>
         </div>
 

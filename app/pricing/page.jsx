@@ -218,7 +218,7 @@ const Pricing = () => {
         changes.
       </p>
       <div className="w-full flex justify-center">
-        <p className=" w-fit text-sm bg-stone-600 py-6 px-6 rounded-lg text-white/70 text-center mb-10 h-[10vh]">
+        <p className="w-fit text-md bg-stone-600 py-6 px-6 rounded-lg text-white/70 text-center mb-10 h-[10vh]">
           Note: In-studio touch ups scheduled within 24 hours of your original
           tan are free of charge.
         </p>
