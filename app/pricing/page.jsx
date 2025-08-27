@@ -69,7 +69,7 @@ const individualStudioTouchUps = [
 const individualMobileNewTans = [
   {
     title: "Full Body",
-    price: 85,
+    price: "90+",
   },
   {
     title: "Upper Body and Face",
